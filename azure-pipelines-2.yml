@@ -29,3 +29,11 @@ steps:
     publishLocation: 'Container'
     
 
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Betalen naar gebruik(59afb62b-c4ad-4953-b00f-3662e41974af)'
+    appType: 'webAppLinux'
+    WebAppName: 'pipelines-dotnet-core-app'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'DOTNETCORE|6.0'
