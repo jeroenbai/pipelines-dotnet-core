@@ -22,4 +22,4 @@ steps:
     appType: 'webAppLinux'
     appName: 'pipelines-dotnet-core-app'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    runtimeStack: 'DOTNETCORE|5.0'
+    runtimeStack: 'DOTNETCORE|6.0'
