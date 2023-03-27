@@ -16,10 +16,10 @@ steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
+- task: AzureWebApp@1
   inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: True
-    
+    azureSubscription: 'Betalen naar gebruik(59afb62b-c4ad-4953-b00f-3662e41974af)'
+    appType: 'webAppLinux'
+    appName: 'pipelines-dotnet-core-app'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'DOTNETCORE|5.0'
